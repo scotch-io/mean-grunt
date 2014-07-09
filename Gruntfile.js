@@ -10,7 +10,7 @@ module.exports = function(grunt) {
     uglify: {
       build: {
         files: {
-          'public/dist/js/app.js': ['public/src/js/**/*.js', 'public/src/js/*.js']
+          'public/dist/js/app.min.js': ['public/src/js/**/*.js', 'public/src/js/*.js']
         }
       }
     },
@@ -51,6 +51,7 @@ module.exports = function(grunt) {
 
   });
 
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
