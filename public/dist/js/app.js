@@ -1,0 +1,1 @@
+angular.module("gruntApp",["MainCtrl","TestService"]),angular.module("MainCtrl",[]).controller("mainController",["$scope",function(a){a.message="Look at me go!"}]),angular.module("TestService",[]).factory("Test",["$http",function(){return{get:function(){}}}]);
