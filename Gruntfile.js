@@ -16,10 +16,18 @@ module.exports = function(grunt) {
     },
 
     // CSS TASKS ===============================================================
+    less: {
+      build: {
+        files: {
+          'public/dist/css/style.css': 'public/src/css/style.less'
+        }
+      }
+    },
+
     cssmin: {
       build: {
         files: {
-          'public/dist/css/style.min.css': ['public/src/css/**/*.css', 'public/src/css/*.css']
+          'public/dist/css/style.min.css': 'public/dist/css/style.css'
         }
       }
     },
@@ -53,11 +61,12 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-concurrent');
 
-  grunt.registerTask('default', ['cssmin', 'jshint', 'uglify', 'concurrent']);
+  grunt.registerTask('default', ['less', 'cssmin', 'jshint', 'uglify', 'concurrent']);
 
 };
