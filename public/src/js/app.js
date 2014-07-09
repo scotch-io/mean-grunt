@@ -1,1 +1,1 @@
-angular.module('gruntApp', ['MainCtrl', 'TestService']);
+angular.module('gruntApp', ['MainCtrl', 'TestService']); 
