@@ -35,7 +35,7 @@ module.exports = function(grunt) {
     // COOL TASKS ==============================================================
     watch: {
       css: {
-        files: ['public/src/css/**/*.css'],
+        files: ['public/src/css/**/*.less'],
         tasks: ['less', 'cssmin']
       },
       js: {
